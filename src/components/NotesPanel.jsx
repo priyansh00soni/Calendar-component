@@ -16,7 +16,7 @@ function DayNote({ dateObj }) {
             {saveState === 'saving' ? (
                 <span className="text-amber-500">Saving...</span>
             ) : (
-                <span className="text-emerald-500 transition-opacity duration-500 opacity-70">✓ Saved</span>
+                <span className="text-emerald-500 transition-opacity duration-500 opacity-70">Saved</span>
             )}
         </div>
       </div>
@@ -70,8 +70,8 @@ function MonthNote({ monthKey, contextTitle }) {
 
 export default function NotesPanel({ activeDates, contextTitle, monthKey }) {
   return (
-    <div className="flex flex-col h-full pr-0 lg:pr-6 lg:border-r border-slate-200 overflow-hidden">
-      <div className="w-full h-full overflow-y-auto pr-2 custom-scrollbar overflow-x-hidden">
+    <div className="flex flex-col lg:h-full pr-0 lg:pr-6 lg:border-r border-slate-200 overflow-visible min-h-0">
+      <div className="w-full lg:h-full overflow-y-auto pr-2 custom-scrollbar overflow-x-hidden min-h-0">
         <AnimatePresence mode="wait">
           {activeDates && activeDates.length > 0 ? (
             <motion.div 

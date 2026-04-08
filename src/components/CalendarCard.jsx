@@ -54,7 +54,7 @@ export default function CalendarCard() {
   }
 
   return (
-    <div className="relative z-10 w-full h-full max-w-5xl max-h-[850px] mx-auto bg-white/80 backdrop-blur-3xl rounded-[24px] border border-white/60 overflow-hidden flex flex-col shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.02)]">
+    <div className="relative z-10 w-full lg:h-full max-w-5xl lg:max-h-[850px] mx-auto bg-white/80 backdrop-blur-3xl rounded-[24px] border border-white/60 overflow-visible lg:overflow-hidden flex flex-col shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.02)]">
       <HeroHeader
         currentMonth={currentMonth}
         setCurrentMonth={setCurrentMonth}
@@ -63,17 +63,9 @@ export default function CalendarCard() {
         onToday={goToToday}
       />
 
-      <div className="p-6 sm:p-8 flex-1 overflow-hidden flex flex-col">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 flex-1 overflow-hidden">
-       
-          <div className="w-full lg:w-[35%] h-full overflow-hidden">
-            <NotesPanel 
-              activeDates={activeDates} 
-              contextTitle={contextTitle} 
-              monthKey={monthKey} 
-            />
-          </div>
-          <div className="w-full lg:w-[65%] h-full flex flex-col">
+      <div className="p-6 sm:p-8 flex flex-col min-h-0 overflow-visible lg:overflow-auto lg:flex-1">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 lg:flex-1 overflow-visible min-h-0">
+          <div className="w-full lg:w-[65%] flex flex-col lg:h-full lg:order-2 min-h-0">
             <CalendarGrid
               grid={grid}
               rangeStart={rangeStart}
@@ -83,6 +75,13 @@ export default function CalendarCard() {
               onDayClick={handleDayClick}
               onDayHover={handleDayHover}
               monthKey={monthKey}
+            />
+          </div>
+          <div className="w-full lg:w-[35%] overflow-hidden lg:h-full lg:order-1 min-h-0">
+            <NotesPanel 
+              activeDates={activeDates} 
+              contextTitle={contextTitle} 
+              monthKey={monthKey} 
             />
           </div>
         </div>
