@@ -27,8 +27,8 @@ export default function HeroHeader({ currentMonth, setCurrentMonth, onPrev, onNe
   const [showMonthPicker, setShowMonthPicker] = useState(false);
 
   // We want a slight delay before the month actually swaps to make it feel smoother
-  const handleDelayedPrev = () => setTimeout(onPrev, 200);
-  const handleDelayedNext = () => setTimeout(onNext, 200);
+  const handleDelayedPrev = () => setTimeout(onPrev, 100);
+  const handleDelayedNext = () => setTimeout(onNext, 100);
 
   //click the hero to close
   const closePopovers = () => {
