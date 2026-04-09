@@ -1,9 +1,10 @@
 import React from 'react';
 import CalendarCard from './components/CalendarCard';
-
+import { Analytics } from "@vercel/analytics/react"
 function App() {
   return (
     <div className="relative w-screen min-h-screen bg-[#9fe0fcd6] font-sans selection:bg-sky-200/50 overflow-y-auto flex items-center justify-center p-4 sm:p-8 ">
+      <Analytics />
       <div className="absolute top-5 left-5 z-20 hidden sm:flex items-center justify-center rounded-[1.5rem] bg-white/95 p-3 shadow-[0_16px_60px_-40px_rgba(15,23,42,0.9)] border border-slate-200/80">
         <img src="/hero.png" alt="TUF logo" className="w-16 h-16 sm:w-20 sm:h-20 object-contain" />
       </div>
