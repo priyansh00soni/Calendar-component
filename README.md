@@ -1,7 +1,7 @@
 # Workspace Calendar
 
 A clean, minimalist calendar and notes interface built for a modern workspace UI.
-
+ 
 ## Tech stack & choices
 
 - **React 19 & Vite**: Fast cold starts, modern React features, and instant HMR which is essential for quickly tweaking the UI.
